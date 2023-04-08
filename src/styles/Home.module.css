@@ -1,3 +1,29 @@
+/* ref. Course Hero */
+.gh-flex {
+  display: flex;
+}
+
+.gh-flex-1 {
+  flex: 1 1 0%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0%;
+}
+
+@media(min-width: 1200px){
+  .lg\:gh-max-w-\[400px\]{
+    max-width: 400px;
+  }
+
+  .lg\:gh-min-w-\[389px\]{
+    min-width: 398px;
+  }
+}
+
+
+
+
+
 .main {
   display: flex;
   flex-direction: column;

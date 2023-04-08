@@ -15,6 +15,33 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
+
+        <div>
+          <header>
+            <div>
+              <div>
+                <Image
+                  className={styles.logo}
+                  src="/next.svg"
+                  alt="Next.js Logo"
+                  width={180}
+                  height={30}
+                  priority
+                />
+              </div>
+              <div className='gh-flex'>
+                <div>
+                  <div></div>
+                </div>
+                <div></div>
+              </div>
+              <div></div>
+              <div></div>
+            </div>
+            <div></div>
+          </header>
+        </div>
+
         <div className={styles.description}>
           <p>
             Get started by editing&nbsp;
