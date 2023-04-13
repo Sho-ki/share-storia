@@ -1,39 +1,72 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Resumate Documentation
 
-## Getting Started
+## Introduction
 
-First, run the development server:
+Built with `React`, `NextJS`, `TypeScript` and `Tailwind CSS`.
+
+## Requirements
+
+- node(18.11.11 or later)
+- yarn(version 1)
+
+## Tech We Have Used
+
+Tech specification for this template is given below
+
+- [React](https://reactjs.org/)
+- [NextJs](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+
+### Step 1 : Configure your env file
+
+Within the project directory you'll find a `.env.example` file just rename it as `.env.local`.
+
+** NOTE : ** This file contain `env values` for local development but when you wanna use this template for your needs you need to replace this value with `your own real API endpoint`.
+
+** NOTE : ** To get the map in development mode, go to your `.env.local` file and put your google map api key there like `NEXT_PUBLIC_GOOGLE_API_KEY= put your api key`
+
+<br/>
+<br/>
+<br/>
+
+### Step 2 : Running the project
+
+Run below command for getting started with this template.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+# on tripfinder or in root directory
+$ yarn
+
+$ yarn dev
+# which will running the boat template for development
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+If you want to test your production build in local environment then run the below commands.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```bash
+# build for production
+yarn build
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+#start template in production mode
+yarn start
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Folder Structure & Customization
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- To setup you site's basic information like **[Logo,Site title,Description etc]** go to -> `boat/src/app/layout.tsx` file
+- To customize tailwind configuration go to -> `tailwind.config.js` file .
+- `/public`: This folder contains `all the static data` used in this project.
+- `/src/app`: This folder contains all the pages and layouts.
+- `/src/components`: This folder contains all the template related ui components.
+- `/src/components/ui`: This folder contains all the common sections related components.
+- `/src/contexts`: This folder contains all necessary context for this template . Like `modal, drawer, gallery` etc.
+- `/src/styles`: Overwrites some third party packages CSS files and our custom CSS in the `global.css` file.
+- `/src/hooks` : This folder contains `hooks` etc.
+- `/src/config` : This folder contains `routes, api-endpoints, constants` etc.
+- `/src/pages` : This folder contains `404.tsx` file for not found or unmatching routes.
+- `/src/types` : This folder contains common used types arround this project.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# frontend
+<br/>
+<br/>
+<br/>
