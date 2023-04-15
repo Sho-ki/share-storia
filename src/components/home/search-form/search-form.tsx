@@ -38,6 +38,27 @@ export default function FindTripForm() {
     });
   };
 
+  // add to send text data to endpoint
+  async function sendData(data: Record<string, any>) {
+    try {
+      const response = await fetch('/api/resumate/documents', {
+        method: 'Post',
+        headers: {
+          'Content-type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      const responseData = await response.json();
+      console.log(responseData);
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  }
+
   const handleFormSubmit = (e: any) => {
     e.preventDefault();
     let queryString = '';
@@ -47,7 +68,10 @@ export default function FindTripForm() {
       returnDate: format(endDate, 'yyyy-MM-dd'),
     };
     queryString = makeQueryString(queryObj);
-    router.push(`${Routes.public.explore}?${queryString}`);
+    console.log('send data:', locationInput.searchedLocation.toLowerCase())
+    sendData({id: -1, title: locationInput.searchedLocation.toLowerCase()});    // to send the data to backend
+    router.push(`${Routes.public.testpage}`);
+    //router.push(`${Routes.public.explore}?${queryString}`);
   };
 
   return (
