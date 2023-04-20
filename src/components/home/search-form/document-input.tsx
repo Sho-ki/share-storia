@@ -3,7 +3,7 @@
 import { forwardRef } from 'react';
 import clsx from 'clsx';
 
-interface LocationInputType
+interface DocumentInputType
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type'> {
   type?: 'text' | 'email' | 'url' | 'search' | 'password' | 'number';
   label: string;
@@ -11,7 +11,7 @@ interface LocationInputType
   icon: React.ReactNode;
 }
 
-const LocationInput = forwardRef<HTMLInputElement, LocationInputType>(
+const DocumentInput = forwardRef<HTMLInputElement, DocumentInputType>(
   ({ label, icon, className = '', ...inputProps }, ref) => {
     return (
       <div className={clsx('relative', className)}>
@@ -33,5 +33,5 @@ const LocationInput = forwardRef<HTMLInputElement, LocationInputType>(
   }
 );
 
-LocationInput.displayName = 'LocationInput';
-export default LocationInput;
+DocumentInput.displayName = 'DocumentInput';
+export default DocumentInput;

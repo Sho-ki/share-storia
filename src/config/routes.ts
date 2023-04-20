@@ -6,7 +6,6 @@ export const Routes = {
   },
   public: {
     home: '/',
-    testpage: '/test-page',
     about: '/about',
     explore: '/explore',
     pricing: '/pricing',

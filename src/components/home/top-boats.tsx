@@ -6,24 +6,66 @@ import ListingCardLoader from '@/components/ui/loader/listing-card-loader';
 import ListingCard from '@/components/ui/cards/listing';
 import SeeMore from '@/components/ui/see-more';
 import Section from '@/components/ui/section';
+import { DocumentTypes } from '../../types/document';
 
-function BoatGrid() {
+const dummy: DocumentTypes[] = [
+  {
+    id: 1,
+    title: "Introduction to Psychology",
+    description: "A comprehensive guide to understanding human behavior and mental processes.",
+    thumbnail: "https://source.unsplash.com/960x640/?school",
+    university: "Harvard University",
+    faculty: "Faculty of Arts and Sciences",
+    slug: "introduction-to-psychology",
+    price: "FREE",
+    rating: 4.5,
+    ratingCount: "1000",
+    // userAvatar: "https://example.com/avatars/user1.jpg"
+  },
+  {
+    id: 2,
+    title: "Data Science and Machine Learning Bootcamp",
+    description: "Learn data science, machine learning, and deep learning in this comprehensive course.",
+    thumbnail: "https://source.unsplash.com/960x640/?school",
+    university: "Stanford University",
+    faculty: "School of Engineering",
+    slug: "data-science-machine-learning-bootcamp",
+    price: "FREE",
+    rating: 4.7,
+    ratingCount: "5000",
+    // userAvatar: "https://example.com/avatars/user2.jpg"
+  },
+  {
+    id: 3,
+    title: "Introduction to Philosophy",
+    description: "Explore the fundamental questions of human existence and the nature of reality.",
+    thumbnail: "https://source.unsplash.com/960x640/?school",
+    university: "University of Oxford",
+    faculty: "Faculty of Philosophy",
+    slug: "introduction-to-philosophy",
+    price: "FREE",
+    rating: 4.3,
+    ratingCount: "1500",
+    // userAvatar: "https://example.com/avatars/user3.jpg"
+  }
+];
+
+function DocumentGrid() {
   return (
     <div className="grid grid-cols-1 gap-x-5 gap-y-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 3xl:gap-y-10">
-      {topBoats.slice(0, 8).map((item, index) => (
+      {dummy.slice(0, 8).map((item, index) => (
         <ListingCard
-          key={`top-boat-grid-${index}`}
-          id={`top-boat-grid-${index}`}
-          slides={item.thumbnail}
-          time={item.time}
-          caption={item.caption}
+          key={`explore-document-${index}`}
+          id={`explore-document-${index}`}
+          thumbnail={item.thumbnail}
+          description={item.description}
           title={item.title}
           slug={item.slug}
-          location={item.location}
+          university={item.university}
+          faculty={item.faculty}
           price={item.price}
           ratingCount={item.ratingCount}
           rating={item.rating}
-          user={item.user}
         />
       ))}
     </div>
@@ -42,7 +84,7 @@ export default function TopBoats() {
       rightElement={<SeeMore />}
     >
       {!state && <ListingCardLoader />}
-      {state && <BoatGrid />}
+      {state && <DocumentGrid />}
     </Section>
   );
 }

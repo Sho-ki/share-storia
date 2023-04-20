@@ -1,11 +1,15 @@
 'use client';
 
 import { useState } from 'react';
-import { topBoats } from '../../../public/data/top-boats';
 import ListingCard from '@/components/ui/cards/listing';
 import Button from '@/components/ui/button';
+import { DocumentTypes } from '../../types/document';
 
-export default function ExploreListings() {
+type Props = {
+  documents: DocumentTypes[]
+}
+
+export default function ExploreListings({documents}:Props) {
   const [list, setList] = useState(12);
   const [isLoading, setIsLoading] = useState(false);
   function handleLoadMore() {
@@ -18,23 +22,23 @@ export default function ExploreListings() {
   return (
     <div>
       <div className="mt-1 grid grid-cols-1 gap-x-5 gap-y-8 xs:grid-cols-2 lg:grid-cols-3 3xl:gap-y-10 4xl:grid-cols-4">
-        {topBoats.slice(0, list).map((item, index) => (
+        {documents.slice(0, list).map((item, index) => (
           <ListingCard
-            key={`explore-boat-${index}`}
-            id={`explore-boat-${index}`}
-            slides={item.thumbnail}
-            time={item.time}
-            caption={item.caption}
+            key={`explore-document-${index}`}
+            id={`explore-document-${index}`}
+            thumbnail={item.thumbnail}
+            description={item.description}
             title={item.title}
             slug={item.slug}
-            location={item.location}
+            university={item.university}
+            faculty={item.faculty}
             price={item.price}
             ratingCount={item.ratingCount}
             rating={item.rating}
           />
         ))}
       </div>
-      {topBoats.length >= list && (
+      {documents.length >= list && (
         <Button
           size="xl"
           type="button"

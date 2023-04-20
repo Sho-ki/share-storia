@@ -23,12 +23,12 @@ export type Testimonial = {
 };
 
 export type ListingItemTypes = {
-  slides: string[];
-  time: string;
-  caption: string;
+  thumbnail?: string;
   title: string;
+  description: string;
+  university: string;
+  faculty: string;
   slug: string;
-  location: string;
   price: string;
   rating?: number;
   ratingCount?: string;

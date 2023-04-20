@@ -1,77 +1,42 @@
 'use client';
 
 import { useState } from 'react';
-import { format, addDays } from 'date-fns';
 import { useRouter } from 'next/navigation';
 import { makeQueryString } from '@/utils/makeQueryString';
-import DatePickerInput from '@/components/home/search-form/daterange-picker';
-import LocationInput from '@/components/home/search-form/location-input';
-import SearchAutocomplete from '@/components/ui/search-autocomplete';
-import { MapMarkerIcon } from '@/components/icons/map-marker';
-import { CalenderIcon } from '@/components/icons/calender';
+
+import DocumentInput from '@/components/home/search-form/document-input';
+// import SearchAutocomplete from '@/components/ui/search-autocomplete';
+// import { MapMarkerIcon } from '@/components/icons/map-marker';
+// import { CalenderIcon } from '@/components/icons/calender';
 import Text from '@/components/ui/typography/text';
 import Button from '@/components/ui/button';
 import { Routes } from '@/config/routes';
+import { DocumentIcon } from '@heroicons/react/24/solid';
+
+// import { LogoIcon } from '@/components/icons/logo';
 
 type QueryStringType = {
-  location?: string;
-  departureDate: string;
-  returnDate: string;
+  q: string;
 };
 
 export default function FindTripForm() {
   const router = useRouter();
-  const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(new Date());
-  const [searchBox, setSearchBox] = useState<any>();
-  const [locationInput, setLocationInput] = useState({
-    searchedLocation: '',
-    searchedPlaceAPIData: [],
+  const [documentInput, setDocumentInput] = useState({
+    searchedDocument: '',
   });
 
-  const onLoad = (ref: any) => setSearchBox(ref);
-  const onPlacesChanged = () => {
-    const places = searchBox?.getPlaces();
-    setLocationInput({
-      searchedLocation: places && places[0] && places[0].formatted_address,
-      searchedPlaceAPIData: places ? places : [],
-    });
-  };
-
-  // add to send text data to endpoint
-  async function sendData(data: Record<string, any>) {
-    try {
-      const response = await fetch('/api/resumate/documents', {
-        method: 'Post',
-        headers: {
-          'Content-type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-
-      const responseData = await response.json();
-      console.log(responseData);
-    } catch (error) {
-      console.error('Error:', error);
-    }
-  }
-
+ 
+ 
   const handleFormSubmit = (e: any) => {
     e.preventDefault();
     let queryString = '';
     const queryObj: QueryStringType = {
-      location: locationInput.searchedLocation,
-      departureDate: format(startDate, 'yyyy-MM-dd'),
-      returnDate: format(endDate, 'yyyy-MM-dd'),
+      q: documentInput.searchedDocument,
     };
     queryString = makeQueryString(queryObj);
-    console.log('send data:', locationInput.searchedLocation.toLowerCase())
-    sendData({id: -1, title: locationInput.searchedLocation.toLowerCase()});    // to send the data to backend
-    router.push(`${Routes.public.testpage}`);
-    //router.push(`${Routes.public.explore}?${queryString}`);
+    
+    router.push(`${Routes.public.explore}?{queryString}`);
+
   };
 
   return (
@@ -82,68 +47,34 @@ export default function FindTripForm() {
     >
       <div className="mb-3 sm:mb-0">
         <span className="mb-2 hidden font-satisfy text-xl leading-7 text-gray-dark sm:block 4xl:text-[28px] 4xl:leading-[44px]">
-          Enjoy your trip
+          Enjoy your study
         </span>
         <Text
           tag="h1"
           className="leading-12 mb-2 !text-xl !font-black uppercase text-gray-dark sm:!text-[28px] sm:!leading-9  4xl:!text-4xl 4xl:!leading-[52px]"
         >
           Discover the <br className="hidden sm:block" />
-          new world
+          new document
         </Text>
         <Text className="mb-5 hidden leading-6 !text-secondary sm:block 3xl:leading-8 4xl:mb-6 4xl:text-lg">
-          Compare prices from 200+ booking sites to help you find the lowest
-          price on the right hotel for you.
+          課題名、大学、学部を入力することで
+          レポートや過去問の解答を検索できます。
         </Text>
       </div>
-      <SearchAutocomplete
-        onLoad={onLoad}
-        onPlacesChanged={onPlacesChanged}
-        loader={
-          <LocationInput
-            label="Loading . . ."
-            icon={<MapMarkerIcon className="h-6 w-6 text-gray" />}
-            className="mb-3"
-            disabled
-          />
-        }
-      >
-        <LocationInput
-          label="Location"
-          icon={<MapMarkerIcon className="h-6 w-6 text-gray" />}
-          className="mb-3"
-          value={locationInput.searchedLocation || ''}
-          onChange={(event) =>
-            setLocationInput({
-              ...locationInput,
-              searchedLocation: event.target.value,
+      
+      <DocumentInput
+        label="課題名や授業名を入力してください"
+        icon={<DocumentIcon className="h-6 w-6 text-gray" />}
+        className="mb-3"
+        value={documentInput.searchedDocument || ''}
+        onChange={(event) =>
+          setDocumentInput({
+            ...documentInput,
+            searchedDocument: event.target.value,
             })
           }
         />
-      </SearchAutocomplete>
-      <DatePickerInput
-        label="Departure"
-        selected={startDate}
-        dateFormat="eee dd / LL / yy"
-        icon={<CalenderIcon className="h-6 w-6 text-gray" />}
-        onChange={(date: Date) => {
-          setStartDate(date);
-          setEndDate(addDays(date, 1));
-        }}
-        minDate={new Date()}
-        containerClass="mb-3"
-        popperClassName="homepage-datepicker"
-      />
-      <DatePickerInput
-        label="Return"
-        selected={endDate}
-        dateFormat="eee dd / LL / yy"
-        icon={<CalenderIcon className="h-6 w-6 text-gray" />}
-        onChange={(date: Date) => setEndDate(date)}
-        minDate={endDate}
-        containerClass="mb-3"
-        popperClassName="homepage-datepicker"
-      />
+      
       <Button
         type="submit"
         className="w-full !py-[14px] text-sm !font-bold uppercase leading-6 md:!py-[17px] md:text-base lg:!rounded-xl 3xl:!py-[22px]"
@@ -152,6 +83,7 @@ export default function FindTripForm() {
       >
         Submit
       </Button>
+      
     </form>
   );
 }

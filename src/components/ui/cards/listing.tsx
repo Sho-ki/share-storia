@@ -19,12 +19,13 @@ import { Routes } from '@/config/routes';
 
 export default function ListingCard({
   id,
-  slides,
-  time,
-  caption,
   title,
+  description,
+  thumbnail,
+  university,
+  caption,
   slug,
-  location,
+  faculty,
   price,
   rating,
   ratingCount,
@@ -39,31 +40,17 @@ export default function ListingCard({
           />
           <Link href={Routes.public.listingDetails(slug)}>
             <div className="listing-item after:absolute after:bottom-0 after:left-0 after:z-[1] after:h-1/4 after:w-full after:bg-gradient-to-t after:from-black/25">
-              <Swiper
-                className="!static"
-                modules={[Pagination, Navigation]}
-                pagination={{
-                  clickable: true,
-                }}
-                slidesPerView={1}
-                navigation={{
-                  nextEl: `.${id}-listing-item-button-next`,
-                  prevEl: `.${id}-listing-item-button-prev`,
-                }}
-              >
-                {slides?.map((slide, index) => (
-                  <SwiperSlide key={`slide-${index}`}>
-                    <Image
-                      className="aspect-[34/25] bg-gray-lighter"
-                      src={slide}
-                      width={816}
-                      height={600}
-                      alt="boat"
-                      priority
-                    />
-                  </SwiperSlide>
-                ))}
-              </Swiper>
+              
+                {thumbnail && thumbnail?.length > 1 ? (
+                  <Image
+                    className="aspect-[34/25] bg-gray-lighter"
+                    src={thumbnail}
+                    width={816}
+                    height={600}
+                    alt="document thumbnail"
+                    priority
+                  />
+                ) : <></>}
               <ActionIcon
                 rounded="full"
                 color="light"
@@ -89,16 +76,16 @@ export default function ListingCard({
             </div>
           </Link>
         </div>
-        <Link href={Routes.public.listingDetails(title)}>
+        <Link href={Routes.public.listingDetails(slug)}>
           <div className="content pt-3">
             <div className="mb-1 flex items-center gap-5">
               <span className="relative flex items-center font-bold text-gray-dark before:absolute before:-right-3 before:block before:h-1 before:w-1 before:rounded-full before:bg-gray-dark">
-                {time}
+                {title}
               </span>
               <span className="font-bold">{caption}</span>
             </div>
-            <h4 className="text-ellipsis text-gray-dark 2xl:mb-1.5">{title}</h4>
-            <p className="mb-3 text-gray-light xl:mb-3">{location}</p>
+            <h4 className="text-ellipsis text-gray-dark 2xl:mb-1.5">{description}</h4>
+            <p className="mb-3 text-gray-light xl:mb-3">{university}, {faculty}</p>
             <div className="flex flex-wrap items-center justify-between gap-3">
               <p className="text-gray-light">
                 <span className="font-bold text-gray-dark xl:text-[18px] 3xl:text-xl">
