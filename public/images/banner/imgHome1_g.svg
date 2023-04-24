@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="221.32" height="290.64" version="1.1" viewBox="0 0 58.557 76.9" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="linearGradient1763">
+   <stop stop-color="#9d9fa2" stop-opacity=".92929" offset="0"/>
+   <stop stop-color="#9d9fa2" stop-opacity="0" offset="1"/>
+  </linearGradient>
+  <linearGradient id="linearGradient1815" x1="411.49" x2="329.17" y1="141.08" y2="60.89" gradientTransform="matrix(.80288 0 0 .80288 193.29 -30.511)" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient1763"/>
+  <linearGradient id="linearGradient1817" x1="348.86" x2="312.46" y1="169.41" y2="147.63" gradientTransform="matrix(.80279 -.012068 .012068 .80279 233.21 -86.649)" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient1763"/>
+ </defs>
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g transform="translate(-454.32 -32.6)">
+  <g stroke-linecap="round">
+   <g fill="#f7f6f5" stroke-width="2.12">
+    <path d="m457.53 33.66h52.145c1.1888 0 2.1458 0.95705 2.1458 2.1458v70.488c0 1.1888-0.95704 2.1458-2.1458 2.1458h-52.145c-1.1888 0-2.1458-0.95705-2.1458-2.1458v-70.488c0-1.1888 0.95704-2.1458 2.1458-2.1458z" stroke="url(#linearGradient1815)" style="paint-order:markers stroke fill"/>
+    <path d="m497.14 33.66 0.18836 12.541c0.0178 1.1887 0.98915 2.1314 2.1778 2.1135l12.311-0.18504-4.6136-4.6523c-1.5232-1.536-4.662-4.5311-6.062-5.9011z" stroke="url(#linearGradient1817)" stroke-linejoin="round" style="paint-order:markers stroke fill"/>
+    <path d="m457.53 33.66h52.145c1.1888 0 2.1458 0.95705 2.1458 2.1458v70.488c0 1.1888-0.95704 2.1458-2.1458 2.1458h-52.145c-1.1888 0-2.1458-0.95705-2.1458-2.1458v-70.488c0-1.1888 0.95704-2.1458 2.1458-2.1458z" stroke="url(#linearGradient1815)" style="paint-order:markers stroke fill"/>
+    <path d="m497.14 33.66 0.18836 12.541c0.0178 1.1887 0.98915 2.1314 2.1778 2.1135l12.311-0.18504-4.6136-4.6523c-1.5232-1.536-4.662-4.5311-6.062-5.9011z" stroke="url(#linearGradient1817)" stroke-linejoin="round" style="paint-order:markers stroke fill"/>
+   </g>
+   <g fill="none" stroke="#2e9f23">
+    <path d="m493.09 60.564-5.4012 2.9461v2.7006l2.2096 1.2275 4.4192-1.9641v2.4551l-4.1736 2.9461-3.9281-0.98204-7.8563 7.8563s-1.2275 1.2275-2.4551 1e-6c-1.2275-1.2275 0-2.4551 0-2.4551l7.8563-7.8563-0.73652-3.4371 2.9461-4.1736 3.6826-0.49102z" stroke-linejoin="round" stroke-width="1.2275"/>
+    <g stroke-dashoffset="16.4" stroke-width="1.4731">
+     <path transform="rotate(130.56)" d="m-248.15-418.46a15.454 15.454 0 0 1-6.1968 17.931 15.454 15.454 0 0 1-18.905-1.5858" style="paint-order:markers stroke fill"/>
+     <path transform="rotate(130.56)" d="m-277.8-409.83a15.454 15.454 0 0 1 6.6631-16.659 15.454 15.454 0 0 1 17.921 0.86743" style="paint-order:markers stroke fill"/>
+     <path transform="rotate(130.56)" d="m-250.69-423.11a15.454 15.454 0 0 1 0.87353 1.2134" style="paint-order:markers stroke fill"/>
+     <path transform="rotate(130.56)" d="m-275.33-404.47a15.454 15.454 0 0 1-1.3464-2.2576" style="paint-order:markers stroke fill"/>
+    </g>
+   </g>
+   <path d="m487.21 38.812a2.2886 2.2886 0 0 1-2.2886 2.2886 2.2886 2.2886 0 0 1-2.2886-2.2886 2.2886 2.2886 0 0 1 2.2886-2.2886 2.2886 2.2886 0 0 1 2.2886 2.2886z" fill="#2e9f23" stroke="#2b8723" stroke-dashoffset="61.984" stroke-linejoin="round" stroke-width="1.3229" style="paint-order:markers stroke fill"/>
+  </g>
+ </g>
+</svg>

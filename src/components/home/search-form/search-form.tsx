@@ -43,11 +43,11 @@ export default function FindTripForm() {
     <form
       noValidate
       onSubmit={handleFormSubmit}
-      className="relative z-[2] w-full max-w-[450px] rounded-lg bg-white p-6 shadow-2xl sm:m-0 sm:max-w-[380px] sm:p-7 sm:pt-9 md:max-w-[400px] md:shadow-none lg:rounded-xl xl:max-w-[460px] xl:p-9 4xl:max-w-[516px] 4xl:p-12"
+      className="transition ease-in-out delay-100  hover:-translate-y-1 hover:scale-110 duration-300 relative z-[2] w-full max-w-[450px] rounded-lg bg-white p-6 shadow-2xl sm:m-0 sm:max-w-[380px] sm:p-7 sm:pt-9 md:max-w-[400px] md:shadow-none lg:rounded-xl xl:max-w-[460px] xl:p-9 4xl:max-w-[516px] 4xl:p-12"
     >
       <div className="mb-3 sm:mb-0">
         <span className="mb-2 hidden font-satisfy text-xl leading-7 text-gray-dark sm:block 4xl:text-[28px] 4xl:leading-[44px]">
-          Enjoy your study
+          
         </span>
         <Text
           tag="h1"
@@ -58,12 +58,12 @@ export default function FindTripForm() {
         </Text>
         <Text className="mb-5 hidden leading-6 !text-secondary sm:block 3xl:leading-8 4xl:mb-6 4xl:text-lg">
           課題名、大学、学部を入力することで
-          レポートや過去問の解答を検索できます。
+          レポートや過去問の参考資料を検索できます。
         </Text>
       </div>
       
       <DocumentInput
-        label="課題名や授業名を入力してください"
+        label="課題名や授業名を入力"
         icon={<DocumentIcon className="h-6 w-6 text-gray" />}
         className="mb-3"
         value={documentInput.searchedDocument || ''}
@@ -74,7 +74,7 @@ export default function FindTripForm() {
             })
           }
         />
-      
+      {/* */}
       <Button
         type="submit"
         className="w-full !py-[14px] text-sm !font-bold uppercase leading-6 md:!py-[17px] md:text-base lg:!rounded-xl 3xl:!py-[22px]"
