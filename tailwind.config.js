@@ -114,6 +114,12 @@ module.exports = {
       animation: {
         blink: 'blink 1.4s infinite both;',
         'scale-up': 'scaleUp 500ms infinite alternate',
+        'linear-moveY' : 'linearMoveY 40s linear infinite',  // to add animation in banner
+        'linear-moveB' : 'linearMoveB 40s linear infinite',
+        'linear-moveR' : 'linearMoveR 40s linear infinite',
+        'linear-moveBl' : 'linearMoveBl 40s linear infinite',
+        'linear-moveG' : 'linearMoveG 40s linear infinite',
+        'linear-moveP' : 'linearMoveP 40s linear infinite',
       },
       keyframes: {
         blink: {
@@ -124,6 +130,55 @@ module.exports = {
         scaleUp: {
           '0%': { transform: 'scale(0)' },
           '100%': { transform: 'scale(1)' },
+        },
+        // to add animation in banner
+        linearMoveY: {
+          '0%': {transform: 'translateX(0%)'},
+          '8%': {transform: 'translateX(-10%)', opacity: 1},
+          '8.1%': {transform: 'translateX(-10%)', opacity: 0},
+          '8.2%': {transform: 'translateX(110%)', opacity: 0},
+          '8.3%': {transform: 'translateX(110%)', opacity: 1},
+          '100%': {transform: 'translateX(0%)'},
+        },
+        linearMoveB: {
+          '0%': {transform: 'translateX(0%)'},
+          '42%': {transform: 'translateX(-50%)', opacity: 1},
+          '42.1%': {transform: 'translateX(-50%)', opacity: 0},
+          '42.2%': {transform: 'translateX(70%)', opacity: 0},
+          '42.3%': {transform: 'translateX(70%)', opacity: 1},
+          '100%': {transform: 'translateX(0%)'},
+        },
+        linearMoveR: {
+          '0%': {transform: 'translateX(0%)'},
+          '50%': {transform: 'translateX(-60%)', opacity: 1},
+          '50.1%': {transform: 'translateX(-60%)', opacity: 0},
+          '50.2%': {transform: 'translateX(60%)', opacity: 0},
+          '50.3%': {transform: 'translateX(60%)', opacity: 1},
+          '100%': {transform: 'translateX(0%)'},
+        },
+        linearMoveBl: {
+          '0%': {transform: 'translateX(0%)'},
+          '66%': {transform: 'translateX(-80%)', opacity: 1},
+          '66.1%': {transform: 'translateX(-80%)', opacity: 0},
+          '66.2%': {transform: 'translateX(40%)', opacity: 0},
+          '66.3%': {transform: 'translateX(40%)', opacity: 1},
+          '100%': {transform: 'translateX(0%)'},
+        },
+        linearMoveG: {
+          '0%': {transform: 'translateX(0%)'},
+          '92%': {transform: 'translateX(-110%)', opacity: 1},
+          '92.1%': {transform: 'translateX(-110%)', opacity: 0},
+          '92.2%': {transform: 'translateX(10%)', opacity: 0},
+          '92.3%': {transform: 'translateX(10%)', opacity: 1},
+          '100%': {transform: 'translateX(0%)'},
+        },
+        linearMoveP: {
+          '0%': {transform: 'translateX(0%)'},
+          '83%': {transform: 'translateX(-100%)', opacity: 1},
+          '83.1%': {transform: 'translateX(-100%)', opacity: 0},
+          '83.2%': {transform: 'translateX(20%)', opacity: 0},
+          '83.3%': {transform: 'translateX(20%)', opacity: 1},
+          '100%': {transform: 'translateX(0%)'},
         },
       },
       boxShadow: {
