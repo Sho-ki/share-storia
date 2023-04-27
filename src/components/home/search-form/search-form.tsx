@@ -35,7 +35,7 @@ export default function FindTripForm() {
     };
     queryString = makeQueryString(queryObj);
     
-    router.push(`${Routes.public.explore}?{queryString}`);
+    router.push(`${Routes.public.explore}?${queryString}`);
 
   };
 
