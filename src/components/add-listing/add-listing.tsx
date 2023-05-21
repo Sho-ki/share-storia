@@ -27,31 +27,13 @@ const StepsEnd = dynamic(
 );
 
 export const stepAtom = atom(1);
-export const storeAtom = atomWithStorage('addNewBoat', {
-  boatName: '',
-  boatType: '',
-  pricePerDay: 10,
-  boatDescription: '',
-  beadRooms: 0,
-  bathRooms: 0,
-  guests: 1,
-  location: '',
-  phoneNumber: '',
-  equipment: [],
-  images: [],
-  specification: {
-    engine: '',
-    engineTorque: '',
-    fuelSystem: '',
-    boreStroke: '',
-    infotainmentSystem: '',
-    displacement: '',
-    fuelCapacity: '',
-    compressionRatio: '',
-    luggageCapacity: '',
-    fuelEconomy: '',
-    weight: '',
-  },
+export const storeAtom = atomWithStorage('addNewStory', {
+  minutes: 5,
+  keywords: '',
+  age:3,
+  beginningWords: '',
+  endingWords: '',
+  theme: '',
 });
 
 export default function AddListing() {
@@ -64,19 +46,19 @@ export default function AddListing() {
     case 2:
       stepComponent = <BoatInfo />;
       break;
+    // case 3:
+    //   stepComponent = <AddBoatPhotos />;
+    //   break;
+    // case 4:
+    //   stepComponent = <AddLocation />;
+    //   break;
+    // case 5:
+    //   stepComponent = <AddEquipment />;
+    //   break;
+    // case 6:
+    //   stepComponent = <AddSpecification />;
+    //   break;
     case 3:
-      stepComponent = <AddBoatPhotos />;
-      break;
-    case 4:
-      stepComponent = <AddLocation />;
-      break;
-    case 5:
-      stepComponent = <AddEquipment />;
-      break;
-    case 6:
-      stepComponent = <AddSpecification />;
-      break;
-    case 7:
       stepComponent = <StepsEnd />;
       break;
   }

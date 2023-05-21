@@ -19,7 +19,7 @@ type QueryStringType = {
   q: string;
 };
 
-export default function FindTripForm() {
+export default function FindStoryForm() {
   const router = useRouter();
   const [documentInput, setDocumentInput] = useState({
     searchedDocument: '',
@@ -35,7 +35,7 @@ export default function FindTripForm() {
     };
     queryString = makeQueryString(queryObj);
     
-    router.push(`${Routes.public.explore}?${queryString}`);
+    router.push(`${Routes.private.addListing}?${queryString}`);
 
   };
 
@@ -53,17 +53,16 @@ export default function FindTripForm() {
           tag="h1"
           className="leading-12 mb-2 !text-xl !font-black uppercase text-gray-dark sm:!text-[28px] sm:!leading-9  4xl:!text-4xl 4xl:!leading-[52px]"
         >
-          Discover the <br className="hidden sm:block" />
-          new document
+          Create your <br className="hidden sm:block" />
+          favorite story
         </Text>
         <Text className="mb-5 hidden leading-6 !text-secondary sm:block 3xl:leading-8 4xl:mb-6 4xl:text-lg">
-          課題名、大学、学部を入力することで
-          レポートや過去問の参考資料を検索できます。
+          Type your theme or character names 
         </Text>
       </div>
       
       <DocumentInput
-        label="課題名や授業名を入力"
+        label="tiger and rabbit, love, etc."
         icon={<DocumentIcon className="h-6 w-6 text-gray" />}
         className="mb-3"
         value={documentInput.searchedDocument || ''}

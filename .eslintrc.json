@@ -9,104 +9,15 @@
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/eslint-recommended",
-    "next/core-web-vitals" // see ./node_modules/eslint-config-next/index.js
+    "next/core-web-vitals"
   ],
-  "plugins": [
-    "@typescript-eslint"
-  ],
+  "plugins": ["@typescript-eslint"],
   "rules": {
     "@next/next/no-img-element": "off",
-    "jsx-a11y/alt-text": "off",
-    "indent": [
-      "error",
-      2,
-      {
-        "flatTernaryExpressions": true,
-        "MemberExpression": 1,
-        "SwitchCase": 1
-      }
-    ],
-    "no-restricted-imports": [
-      "error",
-      {
-        "patterns": ["@mui/*/*/*", "!@mui/material/test-utils/*", "@material-ui/*/*/*"]
-      }
-    ],
-    "react/no-unknown-property": ["error", { "ignore": ["css", "jsx"] }],
-    "linebreak-style": ["error", "unix"],
-    "no-unused-vars": "off",
-    "no-console": "error",
-    "no-useless-concat": "error",
-    "eqeqeq": ["error", "always", { "null": "ignore" }],
-    "use-isnan": "error",
-    "comma-spacing": "error",
-    "comma-style": ["error", "last"],
-    "comma-dangle": ["error", "always-multiline"],
-    "array-bracket-spacing": "error",
-    "eol-last": "error",
-    "key-spacing": "error",
-    "no-trailing-spaces": "error",
-    "arrow-spacing": "error",
-    "no-multiple-empty-lines": ["error", { "max": 1 }],
-    "semi-spacing": ["error", { "before": false }],
-    "object-shorthand": "error",
-    "quotes": [
-      "error",
-      "single",
-      {
-        "allowTemplateLiterals": true
-      }
-    ],
-    "semi": "off",
-    "block-spacing": ["error", "always"],
-    "object-curly-spacing": ["error", "always"],
-    "object-curly-newline": ["error", { "multiline": true }],
-    "array-element-newline": ["error", {
-      "multiline": true,
-      "minItems": 4
-    }],
-    "array-bracket-newline": ["error", {
-      "multiline": true,
-      "minItems": 4
-    }],
-    // note you must disable the base rule as it can report incorrect errors
-    "no-empty-function": "off",
-    "react/display-name": 0,
-    "react-hooks/rules-of-hooks": "warn", // Checks rules of Hooks
-    "react-hooks/exhaustive-deps": "error", // Checks effect dependencies
-    "react/jsx-closing-bracket-location": ["error", {
-      "selfClosing": "tag-aligned",
-      "nonEmpty": "after-props"
-    }],
-    "react/jsx-equals-spacing": ["error", "never"],
-    "react/jsx-first-prop-new-line": ["error", "multiline-multiprop"],
-    "react/jsx-tag-spacing": "error",
-    "react/jsx-wrap-multilines": ["error", {
-      "return": "parens-new-line",
-      "prop": "parens-new-line",
-      "logical": "parens-new-line",
-      "condition": "parens-new-line",
-      "arrow": "parens-new-line",
-      "assignment": "parens-new-line"
-    }],
-    // eslint-config-prettier
-    // "max-len": ["warn", {
-    //   "code": 120,
-    //   "ignoreTemplateLiterals": true,
-    //   "ignoreComments": true,
-    //   "ignoreTrailingComments": true,
-    //   "ignoreStrings": true,
-    //   "ignoreUrls": true
-    //   }],
-    "no-unexpected-multiline": "error",
-    "no-confusing-arrow": ["error", { "allowParens": true }],
-    "@typescript-eslint/semi": ["error"],
-    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
     "@typescript-eslint/ban-ts-ignore": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/no-explicit-any": [
-      "error"
-    ],
+    "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/member-delimiter-style": [
       "error",
       {
@@ -120,7 +31,8 @@
         }
       }
     ],
-    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/no-explicit-any": "error",
     "@typescript-eslint/no-unused-vars": [
       "error",
       {
@@ -128,15 +40,87 @@
         "varsIgnorePattern": "^ignored"
       }
     ],
-    "@typescript-eslint/explicit-module-boundary-types": "off",
-    "@typescript-eslint/ban-types": [
-      "off",
+    "@typescript-eslint/semi": ["error"],
+    "arrow-spacing": "error",
+    "block-spacing": ["error", "always"],
+    "comma-dangle": ["error", "always-multiline"],
+    "comma-spacing": "error",
+    "comma-style": ["error", "last"],
+    "eqeqeq": ["error", "always", { "null": "ignore" }],
+    "indent": [
+      "error",
+      2,
       {
-        "types": {
-          "{}": "off",
-          "object": "off"
-        }
+        "flatTernaryExpressions": true,
+        "MemberExpression": 1,
+        "SwitchCase": 1
       }
-    ]
+    ],
+    "jsx-a11y/alt-text": "off",
+    "key-spacing": "error",
+    "linebreak-style": ["error", "unix"],
+    "max-len": [
+      "warn",
+      {
+        "code": 120,
+        "ignoreTemplateLiterals": true,
+        "ignoreComments": true,
+        "ignoreTrailingComments": true,
+        "ignoreStrings": true,
+        "ignoreUrls": true
+      }
+    ],
+    "no-console": "error",
+    "no-empty-function": "off",
+    "no-multiple-empty-lines": ["error", { "max": 1 }],
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": [
+          "@mui/*/*/*",
+          "!@mui/material/test-utils/*",
+          "@material-ui/*/*/*"
+        ]
+      }
+    ],
+    "no-trailing-spaces": "error",
+    "no-unexpected-multiline": "error",
+    "no-useless-concat": "error",
+    "object-curly-newline": ["error", { "multiline": true }],
+    "object-curly-spacing": ["error", "always"],
+    "object-shorthand": "error",
+    "quotes": [
+      "error",
+      "single",
+      { "allowTemplateLiterals": true }
+    ],
+    "react/display-name": 0,
+    "react-hooks/exhaustive-deps": "error",
+    "react-hooks/rules-of-hooks": "warn",
+    "react/jsx-closing-bracket-location": [
+      "error",
+      {
+        "selfClosing": "tag-aligned",
+        "nonEmpty": "after-props"
+      }
+    ],
+    "react/jsx-equals-spacing": ["error", "never"],
+    "react/jsx-first-prop-new-line": ["error", "multiline-multiprop"],
+    "react/jsx-tag-spacing": "error",
+    "react/jsx-wrap-multilines": [
+      "error",
+      {
+        "return": "parens-new-line",
+        "prop": "parens-new-line",
+        "logical": "parens-new-line",
+        "condition": "parens-new-line",
+        "arrow": "parens-new-line",
+        "assignment": "parens-new-line"
+      }
+    ],
+    "react/no-unknown-property": ["error", { "ignore": ["css", "jsx"] }],
+    "semi": "off",
+    "semi-spacing": ["error", { "before": false }],
+    "use-isnan": "error"
   }
 }

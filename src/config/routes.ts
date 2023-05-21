@@ -18,6 +18,8 @@ export const Routes = {
   },
   private: {
     addListing: '/add-listing',
+    createStory: '/add-listing/story',
+
     dashboard: '/account',
     inbox: '/account/inbox',
     listings: '/account/listings',
