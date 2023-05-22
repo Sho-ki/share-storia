@@ -13,8 +13,8 @@ const BoatInfo = dynamic(
 const AddBoatPhotos = dynamic(
   () => import('@/components/add-listing/steps/upload-photos')
 );
-const AddLocation = dynamic(
-  () => import('@/components/add-listing/steps/add-location')
+const GenerateStory = dynamic(
+  () => import('@/components/add-listing/steps/generate-story')
 );
 const AddEquipment = dynamic(
   () => import('@/components/add-listing/steps/add-equipment')
@@ -34,6 +34,7 @@ export const storeAtom = atomWithStorage('addNewStory', {
   beginningWords: '',
   endingWords: '',
   theme: '',
+  stories: [] as string[],
 });
 
 export default function AddListing() {
@@ -49,22 +50,23 @@ export default function AddListing() {
     // case 3:
     //   stepComponent = <AddBoatPhotos />;
     //   break;
-    // case 4:
-    //   stepComponent = <AddLocation />;
-    //   break;
+    case 3:
+      stepComponent = <StepsEnd />;
+      break;
+    case 4:
+      stepComponent = <GenerateStory />;
+      break;
     // case 5:
     //   stepComponent = <AddEquipment />;
     //   break;
     // case 6:
     //   stepComponent = <AddSpecification />;
     //   break;
-    case 3:
-      stepComponent = <StepsEnd />;
-      break;
+
   }
 
   return (
-    <div className="flex flex-grow items-center justify-center px-4 pb-24 pt-10">
+    <div className={`flex px-4 pb-24 pt-10 ${step !== 4?'flex-grow items-center justify-center':''}`}>
       {stepComponent}
     </div>
   );

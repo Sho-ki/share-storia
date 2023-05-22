@@ -18,11 +18,9 @@ import Counter from '@/components/ui/counter';
 const StorySchema = z.object({
   beginningWords: z
     .string()
-    .min(1, { message: 'This field is requred!' })
     .max(450, { message: 'Reached your letter limit.' }).optional(),
   endingWords: z
     .string()
-    .min(1, { message: 'This field is requred!' })
     .max(450, { message: 'Reached your letter limit.' }).optional(),
   keywords: z
     .string()

@@ -8,15 +8,20 @@ import { CheckCircleIcon } from '@heroicons/react/24/solid';
 import { useWindowsize } from '@/hooks/use-window-size';
 import Text from '@/components/ui/typography/text';
 import Button from '@/components/ui/button';
-import { useAtom } from 'jotai';
-import { storeAtom } from '../add-listing';
+import { useAtom, useSetAtom } from 'jotai';
+import { stepAtom, storeAtom } from '../add-listing';
+import router from 'next/router';
+import CreateListingFooter from '../../footer/create-listing-footer';
 
 export default function StepsEnd() {
-  const router = useRouter();
+  const setStep = useSetAtom(stepAtom);
   const { width, height } = useWindowsize();
   // const mounted = useIsMounted();
   const [store, setStore] = useAtom(storeAtom);
-  console.log('store: ', store);
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    setStep(4)
+  }
 
 
   return (
@@ -29,11 +34,12 @@ export default function StepsEnd() {
         <Button
           size="lg"
           className="tracking-wider"
-          onClick={() => router.push(Routes.private.createStory)}
+          onClick={handleSubmit}
         >
           Start
         </Button>
       </div>
+      <CreateListingFooter onBack={() => setStep(2)} hasNext={false} />
       {/* {mounted && (
         <Confetti width={width - 20} height={height - 10} className="mx-auto" />
       )} */}

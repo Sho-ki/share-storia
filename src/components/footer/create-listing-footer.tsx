@@ -6,11 +6,13 @@ import Button from '@/components/ui/button';
 interface BackNextFooterTypes {
   onNext?: () => void;
   onBack?: () => void;
+  hasNext?: boolean;
 }
 
 export default function CreateListingFooter({
   onNext,
   onBack,
+  hasNext = true,
 }: BackNextFooterTypes) {
   return (
     <div className="fixed inset-x-0 bottom-0 z-20 w-full bg-white">
@@ -24,6 +26,7 @@ export default function CreateListingFooter({
           <ChevronLeftIcon className="mr-2 h-auto w-4" />
           Back
         </Button>
+        {hasNext && (
         <Button
           type="submit"
           className="text-sm !font-bold capitalize focus:!ring-0 lg:text-base"
@@ -31,6 +34,9 @@ export default function CreateListingFooter({
         >
           Next <ChevronRightIcon className="ml-2 h-auto w-4" />
         </Button>
+
+        )}
+
       </div>
     </div>
   );
