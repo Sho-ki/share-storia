@@ -26,10 +26,8 @@ export type ListingItemTypes = {
   thumbnail?: string;
   title: string;
   description: string;
-  university: string;
-  faculty: string;
+  category: string;
   slug: string;
-  price: string;
   rating?: number;
   ratingCount?: string;
   userAvatar?: string;

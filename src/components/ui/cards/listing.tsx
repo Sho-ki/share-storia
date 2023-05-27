@@ -22,11 +22,8 @@ export default function ListingCard({
   title,
   description,
   thumbnail,
-  university,
-  caption,
+  category,
   slug,
-  faculty,
-  price,
   rating,
   ratingCount,
 }: ListingItemTypes) {
@@ -82,17 +79,16 @@ export default function ListingCard({
               <span className="relative flex items-center font-bold text-gray-dark before:absolute before:-right-3 before:block before:h-1 before:w-1 before:rounded-full before:bg-gray-dark">
                 {title}
               </span>
-              <span className="font-bold">{caption}</span>
             </div>
             <h4 className="text-ellipsis text-gray-dark 2xl:mb-1.5">{description}</h4>
-            <p className="mb-3 text-gray-light xl:mb-3">{university}, {faculty}</p>
+            <p className="mb-3 text-gray-light xl:mb-3">{category}</p>
             <div className="flex flex-wrap items-center justify-between gap-3">
-              <p className="text-gray-light">
+              {/* <p className="text-gray-light">
                 <span className="font-bold text-gray-dark xl:text-[18px] 3xl:text-xl">
-                  {price}
+                  {category}
                 </span>{' '}
                 avg/day
-              </p>
+              </p> */}
               <div className="flex items-center gap-3 leading-7">
                 <Rate
                   allowHalf

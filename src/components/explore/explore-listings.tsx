@@ -3,13 +3,13 @@
 import { useState } from 'react';
 import ListingCard from '@/components/ui/cards/listing';
 import Button from '@/components/ui/button';
-import { DocumentTypes } from '../../types/document';
+import { StoryTypes } from '../../types/story';
 
 type Props = {
-  documents: DocumentTypes[]
+  story: StoryTypes[]
 }
 
-export default function ExploreListings({documents}:Props) {
+export default function ExploreListings({story}:Props) {
   const [list, setList] = useState(12);
   const [isLoading, setIsLoading] = useState(false);
   function handleLoadMore() {
@@ -22,23 +22,21 @@ export default function ExploreListings({documents}:Props) {
   return (
     <div>
       <div className="mt-1 grid grid-cols-1 gap-x-5 gap-y-8 xs:grid-cols-2 lg:grid-cols-3 3xl:gap-y-10 4xl:grid-cols-4">
-        {documents.slice(0, list).map((item, index) => (
+        {story.slice(0, list).map((item, index) => (
           <ListingCard
-            key={`explore-document-${index}`}
-            id={`explore-document-${index}`}
+            key={`explore-story-${index}`}
+            id={`explore-story-${index}`}
             thumbnail={item.thumbnail}
             description={item.description}
             title={item.title}
             slug={item.slug}
-            university={item.university}
-            faculty={item.faculty}
-            price={item.price}
+            category={item.category}
             ratingCount={item.ratingCount}
             rating={item.rating}
           />
         ))}
       </div>
-      {documents.length >= list && (
+      {story.length >= list && (
         <Button
           size="xl"
           type="button"

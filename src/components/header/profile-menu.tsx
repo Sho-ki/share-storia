@@ -16,23 +16,24 @@ interface MenuItemProps {
 const menu = {
   top: [
     {
-      path: Routes.private.inbox,
-      text: 'Message',
-    },
-    {
-      path: Routes.private.trips,
-      text: 'Trips',
-    },
-    {
-      path: Routes.private.wishlist,
-      text: 'Wishlist',
-    },
-  ],
-  bottom: [
-    {
       path: Routes.private.dashboard,
       text: 'Dashboard',
     },
+    // {
+    //   path: Routes.private.inbox,
+    //   text: 'Message',
+    // },
+    // {
+    //   path: Routes.private.trips,
+    //   text: 'Trips',
+    // },
+    // {
+    //   path: Routes.private.wishlist,
+    //   text: 'Wishlist',
+    // },
+  ],
+  bottom: [
+
     {
       path: Routes.private.accountSettings,
       text: 'settings',

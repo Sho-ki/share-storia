@@ -11,12 +11,12 @@ export default function HomePage() {
   return (
     <>
       <HeroBanner />
-      <DestinationBlock />
+      {/* <DestinationBlock /> */}
       <InstructionBlock />
       <TopBoats />
-      <PromotionalBlock />
-      <NewBoats />
-      <TestimonialBlock />
+      {/* <PromotionalBlock /> */}
+      {/* <NewBoats /> */}
+      {/* <TestimonialBlock /> */}
       <SubscriptionBlock sectionClassName="4xl:!px-16" />
     </>
   );

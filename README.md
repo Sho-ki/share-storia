@@ -1,4 +1,4 @@
-# Resumate Documentation
+# Share Storia Documentation
 
 ## Introduction
 

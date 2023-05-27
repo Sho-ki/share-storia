@@ -43,7 +43,7 @@ export default function FindStoryForm() {
     <form
       noValidate
       onSubmit={handleFormSubmit}
-      className="transition ease-in-out delay-100  hover:-translate-y-1 hover:scale-110 duration-300 relative z-[2] w-full max-w-[450px] rounded-lg bg-white p-6 shadow-2xl sm:m-0 sm:max-w-[380px] sm:p-7 sm:pt-9 md:max-w-[400px] md:shadow-none lg:rounded-xl xl:max-w-[460px] xl:p-9 4xl:max-w-[516px] 4xl:p-12"
+      className="relative z-[2] w-full max-w-[450px] rounded-lg bg-white p-6 shadow-2xl sm:m-0 sm:max-w-[380px] sm:p-7 sm:pt-9 md:max-w-[400px] md:shadow-none lg:rounded-xl xl:max-w-[460px] xl:p-9 4xl:max-w-[516px] 4xl:p-12"
     >
       <div className="mb-3 sm:mb-0">
         <span className="mb-2 hidden font-satisfy text-xl leading-7 text-gray-dark sm:block 4xl:text-[28px] 4xl:leading-[44px]">
@@ -61,26 +61,13 @@ export default function FindStoryForm() {
         </Text>
       </div>
       
-      <DocumentInput
-        label="tiger and rabbit, love, etc."
-        icon={<DocumentIcon className="h-6 w-6 text-gray" />}
-        className="mb-3"
-        value={documentInput.searchedDocument || ''}
-        onChange={(event) =>
-          setDocumentInput({
-            ...documentInput,
-            searchedDocument: event.target.value,
-            })
-          }
-        />
-      {/* */}
       <Button
         type="submit"
-        className="w-full !py-[14px] text-sm !font-bold uppercase leading-6 md:!py-[17px] md:text-base lg:!rounded-xl 3xl:!py-[22px]"
+        className="text-white font-bold py-2 px-4 rounded w-full !py-[14px] text-sm !font-bold uppercase leading-6 md:!py-[17px] md:text-base lg:!rounded-xl 3xl:!py-[22px] transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-100"
         rounded="lg"
         size="xl"
       >
-        Submit
+        Start your story
       </Button>
       
     </form>
