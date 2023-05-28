@@ -11,11 +11,14 @@ import Searchbox from '@/components/ui/search-box';
 import Button from '@/components/ui/button';
 import Logo from '@/components/ui/logo';
 import { useIsMounted } from '@/hooks/use-is-mounted';
+import { useUser } from '@auth0/nextjs-auth0/client';
+import Link from 'next/link';
 
 export default function ListingDetailsHeader() {
+  const { user, error } = useUser();
   const mounted = useIsMounted();
-  const { openModal } = useModal();
-  const { isAuthorized } = useAuth();
+  // const { openModal } = useModal();
+  // const { isAuthorized } = useAuth();
   const headerRef = useRef(null);
   addScrollingClass(headerRef);
 
@@ -34,16 +37,18 @@ export default function ListingDetailsHeader() {
           <SearchIconBtn />
           {mounted ? (
             <>
-              {isAuthorized ? (
+              {user ? (
                 <ProfileMenu className="hidden md:block" />
               ) : (
+                <Link href="/api/auth/login">
                 <Button
                   size="sm"
-                  onClick={() => openModal('SIGN_IN')}
+                  // onClick={() => openModal('SIGN_IN')}
                   className="rounded-lg !px-4 py-2 text-sm capitalize md:text-base"
                 >
                   Log in
                 </Button>
+                </Link>
               )}
             </>
           ) : null}

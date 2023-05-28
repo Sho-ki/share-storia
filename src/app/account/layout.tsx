@@ -7,18 +7,19 @@ import { useRouter } from 'next/navigation';
 import DashboardHeader from '@/components/header/dashboard';
 import MobileNav from '@/components/ui/mobile-nav';
 import Footer from '@/components/footer/footer';
+import { UserProvider, useUser } from '@auth0/nextjs-auth0/client';
 
 export default function UserLayout({ children }: React.PropsWithChildren<{}>) {
   const router = useRouter();
-  const { isAuthorized } = useAuth();
+  const { user, error } = useUser();
 
   // Note: need this check if someone manually clear their cookie from browser
   useEffect(() => {
-    if (!isAuthorized) {
+    if (!user) {
       router.push(Routes.public.home);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isAuthorized]);
+  }, [user]);
 
   return (
     <>

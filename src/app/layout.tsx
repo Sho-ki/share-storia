@@ -5,6 +5,7 @@ import '@/styles/globals.css';
 import GalleryCarouselView from '@/components/gallery/view';
 import DrawerContainer from '@/components/drawers/view';
 import ModalContainer from '@/components/modals/view';
+import { UserProvider } from '@auth0/nextjs-auth0/client';
 
 const lato = Lato({
   subsets: ['latin'],
@@ -27,6 +28,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: React.PropsWithChildren<{}>) {
   return (
+    <UserProvider>
     <html
       lang="en"
       className={clsx(
@@ -43,5 +45,6 @@ export default function RootLayout({ children }: React.PropsWithChildren<{}>) {
         <GalleryCarouselView />
       </body>
     </html>
+    </UserProvider>
   );
 }

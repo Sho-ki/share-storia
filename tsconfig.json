@@ -29,7 +29,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "C:\\Users\\NAHID\\Desktop\\.next/types/**/*.ts",
+    "C:\\Users\\NAHID\\Desktop\\.next/types/**/*.ts", "src/pages/api/auth/[...auth0].ts",
   ],
   "exclude": ["node_modules"]
 }

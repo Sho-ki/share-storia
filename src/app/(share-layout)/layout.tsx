@@ -11,6 +11,6 @@ export default function ListingLayout({
       <main className="flex-grow">{children}</main>
       <Footer />
       <MobileNav />
-    </>
+    </ >
   );
 }

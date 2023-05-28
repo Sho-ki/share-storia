@@ -7,6 +7,8 @@ import ProfileMenu from '@/components/header/profile-menu';
 import { useModal } from '@/components/modals/context';
 import { useIsMounted } from '@/hooks/use-is-mounted';
 import Button from '@/components/ui/button';
+import { UserProfile, useUser } from '@auth0/nextjs-auth0/client';
+import Cookies from 'universal-cookie';
 
 const menuItems = [
   {
@@ -31,9 +33,11 @@ const menuItems = [
   },
 ];
 
+
 export default function Menu() {
-  const { openModal } = useModal();
-  const { isAuthorized } = useAuth();
+  // const { openModal } = useModal();
+  // const { isAuthorized } = useAuth();
+  const { user, error } = useUser();
   const mounted = useIsMounted();
 
   return (
@@ -49,17 +53,19 @@ export default function Menu() {
       </ul>
       {mounted ? (
         <>
-          {isAuthorized ? (
+          {user? (
             <div className="ml-7 flex justify-end">
               <ProfileMenu className="hidden md:block" />
             </div>
           ) : (
+            <Link href="/api/auth/login">
             <Button
-              onClick={() => openModal('SIGN_IN')}
+              // onClick={() => openModal('SIGN_IN')}
               className="ml-5 rounded-lg px-6 py-2 text-sm capitalize md:text-base 4xl:px-8 4xl:py-2.5"
             >
               Log in
             </Button>
+            </Link>
           )}
         </>
       ) : null}

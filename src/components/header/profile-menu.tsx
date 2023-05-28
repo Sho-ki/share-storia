@@ -7,6 +7,7 @@ import useAuth from '@/hooks/use-auth';
 import { Menu, Transition } from '@headlessui/react';
 import Avatar from '@/components/ui/avatar';
 import { Routes } from '@/config/routes';
+import { useUser } from '@auth0/nextjs-auth0/client';
 
 interface MenuItemProps {
   text: string;
@@ -64,8 +65,8 @@ function MenuItem({ text, link }: MenuItemProps) {
 }
 
 export default function ProfileMenu({ className }: { className?: string }) {
-  const { user, unauthorize } = useAuth();
-
+  // const { user, unauthorize } = useAuth();
+  const { user, error } = useUser();
   return (
     <>
       <Menu
@@ -78,7 +79,7 @@ export default function ProfileMenu({ className }: { className?: string }) {
         <Menu.Button className="relative h-full w-full rounded-full bg-white">
           <Avatar
             className="cursor-pointer"
-            src={user?.avatar}
+            src={user?.picture ? user?.picture : undefined }
             rounded="full"
             size="100%"
           />
@@ -102,13 +103,15 @@ export default function ProfileMenu({ className }: { className?: string }) {
               {menu.bottom.map((item) => (
                 <MenuItem key={item.text} text={item.text} link={item.path} />
               ))}
+              <Link href="/api/auth/logout">
               <Menu.Item
                 className="block w-full rounded-sm px-5 py-2 text-left   text-base font-normal text-gray-dark hover:bg-gray-lightest"
                 as="button"
-                onClick={() => unauthorize()}
+                // onClick={() => unauthorize()}
               >
                 Log out
               </Menu.Item>
+              </Link>
             </div>
           </Menu.Items>
         </Transition>
