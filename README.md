@@ -67,9 +67,9 @@ yarn start
 - `/src/pages` : This folder contains `404.tsx` file for not found or unmatching routes.
 - `/src/types` : This folder contains common used types arround this project.
 
-<br/>
-<br/>
-<br/>
-# share-storia
-# share-storia
-# share-storia
+## Update Plan
+- Advanced Settings
+  - Enable to add your friends to your story
+  - Enable you to pick what you want to be
+  - Enable you to choose keywords for your story
+# share_storia
